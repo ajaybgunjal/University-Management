@@ -1,0 +1,14 @@
+{% extends 'Application/base.html' %}
+
+{% load crispy_forms_tags %}
+{% block title %} Add New Course {% endblock %}
+{% block title1 %} Add New Course {% endblock %}
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form|crispy}}
+    <button type = 'submit' class = 'btn btn-success'> Submit</button>
+</form>
+<!--<br><br><a href="{%url 'Application:all-views' %}" ><b>Go to Application</b></a>-->
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'Application/base.html' %}
+
+{% load crispy_forms_tags %}
+{% block title %} All Advisors {% endblock %}
+{% block title1 %} All Advisors {% endblock %}
+{% block content %}
+
+<a href = "{% url 'Application:advisor-add' %}">Add Advisors</a> <br> <br>
+
+<ul>
+{% for advisor in advisors %}
+    <li>
+        Advisor ID: <a href="{% url 'Application:instructor'%}{{advisor.i_id.pk}}/">{{advisor.i_id.pk}}</a> &nbsp;
+        Student ID: <a href="{% url 'Application:student'%}{{advisor.s_id.pk}}/">{{advisor.s_id.pk}}</a>
+        <br>
+    </li> <br>
+{% endfor %}
+</ul>
+
+<!--<br><br><a href="{%url 'Application:all-views' %}" ><b>Go to Application</b></a>-->
+{% endblock %}

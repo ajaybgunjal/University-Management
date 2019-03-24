@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+{%load static%}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>{% block title%} {% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'css/baseCSS.css'%}">
+    <script rel="stylesheet" type = "text/css">{%  block cssblock %}{%endblock%}</script>
+</head>
+<body>
+<div class="container-fluid" >
+    <div class="row justify-content-center">
+        <div class="col-8">
+            {% if user.is_authenticated %}
+                <span style="color:green;">Hello {{ user.first_name }} &nbsp; {{user.last_name}} </span>
+                <span style="color: Blue;"><h1 class="display-4">{% block title1 %} {% endblock %}</h1></span>
+                <hr class="style18">
+                {% if messages %}
+                    {%for message in messages %}
+                        <div class="alert alert-{{message.tags}}">
+                            {{message}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                {% block content %}
+                {% endblock %}
+                <br>
+                <span style="float:left;">
+                    <a href="{%url 'Application:all-views' %}" ><button class="btn"><i class="fa fa-home">Home</i></button></a>
+                    &nbsp;
+                    <a href="{% url 'logout' %}"><button class="btn"><i class="fa fa-close">Log Out</i></button></a>
+                </span>
+            {% else %}
+                <p>You are not logged in</p>
+                <br>
+                <b><a href="{% url 'login' %}"><button class="btn"><i class="fa ">Log In</i></button></a></b>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

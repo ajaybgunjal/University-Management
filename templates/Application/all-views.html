@@ -1,0 +1,79 @@
+{% extends 'Application/base.html' %}
+{% block title %} University Application {% endblock %}
+{% block title1 %} University Application {% endblock %}
+{% load static %}
+{% block content %}
+<div class="card-columns text-center">
+    <div class="card bg-primary text-white border-warning" style="width: 20rem;">
+        <img class="card-img-top" src="{% static 'images/Student Image.webp' %}" height = "300" width="300" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Student Management</h5>
+            <!--<p class="card-text">Add and View Students</p>-->
+            <a href="{%url 'Application:student'%}" alt = "No url"><button class="btn btn-primary">View</button></a>
+        </div>
+    </div>
+    <div class="card bg-primary text-white border-warning" style="width: 20rem;">
+        <img class="card-img-top" src="{% static 'images/Department Image.jpg' %}" height = "300" width="300" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Department Management</h5>
+            <!--<p class="card-text">Add and View Students</p>-->
+            <a href = "{% url 'Application:department' %}"><button class="btn btn-primary">View</button></a>
+        </div>
+    </div>
+    <div class="card bg-primary text-white border-warning" style="width: 20rem;">
+        <img class="card-img-top" src="{% static 'images/Instructor Image.jpg' %}" height = "300" width="300" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Instructor Management</h5>
+            <!--<p class="card-text">Add and View Students</p>-->
+            <a href = "{% url 'Application:instructor' %}"><button class="btn btn-primary">View</button></a>
+        </div>
+    </div>
+    <div class="card bg-primary text-white border-warning" style="width: 20rem;">
+        <img class="card-img-top" src="{% static 'images/Advisor Image.jpg' %}" height = "300" width="300" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Advisor Management</h5>
+            <!--<p class="card-text">Add and View Students</p>-->
+            <a href = "{% url 'Application:advisor' %}"><button class="btn btn-primary">View</button></a>
+        </div>
+    </div>
+    <div class="card bg-primary text-white border-warning" style="width: 20rem;">
+        <img class="card-img-top" src="{% static 'images/Course Image.jpg' %}" height = "300" width="300" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Course Management</h5>
+            <!--<p class="card-text">Add and View Students</p>-->
+        <a href = "{% url 'Application:course' %}"><button class="btn btn-primary">View</button></a>
+        </div>
+    </div>
+    <div class="card bg-primary text-white border-warning" style="width: 20rem;">
+        <img class="card-img-top" src="{% static 'images/Section Image.jpg' %}" height = "300" width="300" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Section Management</h5>
+            <!--<p class="card-text">Add and View Students</p>-->
+        <a href = "{% url 'Application:section' %}"><button class="btn btn-primary">View</button></a>
+        </div>
+    </div>
+</div>
+<!--<b>-->
+    <!--<b> <i>-->
+        <!--<a href = "{% url 'Application:student' %}"><button class="btn btn-success">Manage Students</button></a>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<a href = "{% url 'Application:department' %}"><button class="btn btn-success">Manage Departments</button></a>-->
+        <!--<br>-->
+
+        <!--<br>-->
+        <!--<a href = "{% url 'Application:advisor' %}"><button class="btn btn-success">Manage Advisors</button></a>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<a href = "{% url 'Application:instructor' %}"><button class="btn btn-success">Manage Instructors</button></a>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<a href = "{% url 'Application:course' %}"><button class="btn btn-success">Manage Courses</button></a>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<a href = "{% url 'Application:section' %}"><button class="btn btn-success">Manage Sections</button></a>-->
+    <!--</i> </b>-->
+<!--</b>-->
+<!--<button class="btn"><i class="fa fa-home"></i></button>-->
+<!--<br><br><a href="{%url 'Application:all-views' %}" ><b><button class="btn"><i class="fa fa-home"></i></button>/b></a>-->
+{% endblock %}

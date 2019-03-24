@@ -1,0 +1,50 @@
+{% extends 'Application/base.html' %}
+{%load static %}
+{% load crispy_forms_tags %}
+{% block title %} All Students {% endblock %}
+{% block title1 %} All Students {% endblock %}
+{% block content %}
+
+<a href = "{% url 'Application:student-add' %}">Add Student</a> <br> <br>
+{%if not students %}
+    <h5>No Student Data</h5>
+{% else %}
+<table class = "table table-striped">
+    <thead class="thead-dark">
+    <tr>
+    {%for student in students%}
+        {% if forloop.first %}
+            {% for name, value in student.get_fields %}
+                <th scope="col">{{ name }}</th>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+    </tr>
+    </thead>
+    {%for student in students%}
+    <tr>
+        {% for name, value in student.get_fields %}
+            {%if name == 'Image'%}
+            <td> <img src="/media/{{value}}" height="300" width="300" alt = "Image not found"></td>
+            <!--<td>{{value}}</td>-->
+            {%elif name == "Roll Number"%}
+            <td><a href="{% url 'Application:student'%}{{student.ID}}/">{{value}}</a></td>
+            {% else %}
+                <td>{{value}}</td>
+            {% endif %}
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+
+<!--<ul>-->
+<!--{% for student in students %}-->
+    <!--<li>-->
+        <!--Student ID: <a href="{% url 'Application:student'%}{{student.ID}}/">{{student.ID}}</a> &nbsp;-->
+        <!--Name: {{student.firstName}} &nbsp; {{student.lastName}} <br>-->
+    <!--</li> <br>-->
+<!--{% endfor %}-->
+<!--</ul>-->
+{% endif %}
+<!--<br><br><a href="{%url 'Application:all-views' %}" ><b>Go to Application</b></a>-->
+{% endblock %}

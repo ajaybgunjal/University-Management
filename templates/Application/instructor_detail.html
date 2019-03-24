@@ -1,0 +1,15 @@
+{% extends 'Application/base.html' %}
+{% block title %} Instructor Details {% endblock %}
+{% block title1 %} Instructor Details {% endblock %}
+
+{% block content %}
+<b>ID: </b> {{instructor.ID}}
+<br>
+<b>Name: </b> <p>{{instructor.firstName}} &nbsp; {{instructor.lastName}}</p>
+<br>
+<b>Department: </b> <a href="{% url 'Application:department'%}{{instructor.dept_name.pk}}/">{{instructor.dept_name.pk}}</a>
+<br>
+<b>Total Salary: </b> {{instructor.salary}}
+<br>
+<!--<a href= "{%url 'Application:all-views' %}">Go to Application</a>-->
+{% endblock %}

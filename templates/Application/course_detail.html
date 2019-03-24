@@ -1,0 +1,15 @@
+{% extends 'Application/base.html' %}
+{% block title %} Course Details {% endblock %}
+{% block title1 %} Course Details {% endblock %}
+
+{% block content %}
+<b>Course ID: </b> {{course.course_id}}
+<br>
+<b>Title: </b> <p>{{course.title}}</p>
+<br>
+<b>Department: </b> <a href="{% url 'Application:department'%}{{course.dept_name.pk}}/">{{course.dept_name.pk}}</a>
+<br>
+<b>Total Credits: </b> {{course.credits}}
+<br>
+<!--<a href= "{%url 'Application:all-views' %}">Go to Application</a>-->
+{% endblock %}

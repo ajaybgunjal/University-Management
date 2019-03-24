@@ -1,0 +1,15 @@
+{% extends 'Application/base.html' %}
+{% block title %} Section Details {% endblock %}
+{% block title1 %} Section Details {% endblock %}
+
+{% block content %}
+<b>Section ID: </b> {{section.course_id}}
+<br>
+<b>Course : </b> <a href="{% url 'Application:course'%}{{section.course_id.pk}}/">{{section.course_id.pk}}</a>
+<br>
+<b>Semester: </b> {{section.semester}}
+<br>
+<b>Year: </b> {{section.year}}
+<br>
+<!--<a href= "{%url 'Application:all-views' %}">Go to Application</a>-->
+{% endblock %}

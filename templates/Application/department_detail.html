@@ -1,0 +1,12 @@
+{% extends 'Application/base.html' %}
+{% block title %} Department Details {% endblock %}
+{% block title1 %} Department Details {% endblock %}
+
+{% block content %}
+
+<b>Name: </b> <p>{{department.dept_name}}</p> <br>
+<b>Building: </b> <p>{{department.building}}</p> <br>
+<b>Budget: </b> <p>{{department.budget}}</p> <br>
+<!--<br><br><a href="{%url 'Application:all-views' %}" ><b>Go to Application</b></a>-->
+
+{% endblock %}

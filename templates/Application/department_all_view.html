@@ -1,0 +1,19 @@
+{% extends 'Application/base.html' %}
+
+{% load crispy_forms_tags %}
+{% block title %} All Departments {% endblock %}
+{% block title1 %} All Departments {% endblock %}
+{% block content %}
+
+<a href = "{% url 'Application:department-add' %}">Add departments</a> <br> <br>
+
+<ul>
+{% for department in departments %}
+    <li>
+        Department Name: <a href="{% url 'Application:department'%}{{department.pk}}/">{{department.dept_name}}</a>
+        <br>
+    </li> <br>
+{% endfor %}
+</ul>
+<!--<br><br><a href="{%url 'Application:all-views' %}" ><b>Go to Application</b></a>-->
+{% endblock %}

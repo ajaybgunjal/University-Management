@@ -1,0 +1,12 @@
+{% extends 'Application/base.html' %}
+{% block title %} Advisor Details {% endblock %}
+{% block title1 %} Advisor Details {% endblock %}
+
+{% block content %}
+<b>Student: </b> {{advisor.s_id.pk}} &nbsp; {{advisor.s_id.pk}}
+<br>
+<b>Instructor: </b> <p>{{advisor.p_id.pk}} &nbsp; {{advisor.p_id.pk}}</p>
+<br>
+<!--<a href= "{%url 'Application:all-views' %}">Go to Application</a>-->
+<!--<br><br><a href="{%url 'Application:all-views' %}" ><b>Go to Application</b></a>-->
+{% endblock %}

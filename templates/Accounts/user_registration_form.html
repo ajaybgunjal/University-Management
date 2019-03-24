@@ -1,0 +1,19 @@
+{% extends 'Accounts/baseWithoutLogIn.html' %}
+
+{%block title %} User Registration {% endblock %}
+{% block title1 %} User Registration {% endblock %}
+{%load crispy_forms_tags%}
+{%block content %}
+
+<form class="form-group" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form | crispy}}
+    <input type="submit" class="btn btn-success"></form>
+</form>
+<div class = "border-top pt-3">
+<small class = "text-muted">
+    Already have an account? &nbsp; <a href="{% url 'login' %}">Log In</a>
+</small>
+</div>
+{% endblock %}
+

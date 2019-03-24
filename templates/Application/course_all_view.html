@@ -1,0 +1,20 @@
+{% extends 'Application/base.html' %}
+
+{% load crispy_forms_tags %}
+{% block title %} All Courses {% endblock %}
+{% block title1 %} All Courses {% endblock %}
+{% block content %}
+
+<a href = "{% url 'Application:course-add' %}">Add Courses</a> <br> <br>
+
+<ul>
+{% for course in courses %}
+    <li>
+        Course ID: <a href="{% url 'Application:course'%}{{course.pk}}/">{{course.course_id}}</a>
+        <br>
+    </li> <br>
+{% endfor %}
+</ul>
+
+<!--<br><br><a href="{%url 'Application:all-views' %}" ><b>Go to Application</b></a>-->
+{% endblock %}
