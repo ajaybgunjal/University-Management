@@ -55,7 +55,7 @@ class AdvisorDetailView(DetailView):
 class CourseCreateView(CreateView):
     model = Course
     fields = ('course_id', 'title', 'dept_name', 'credits')
-
+    
 
 class CourseDetailView(DetailView):
     model = Course
