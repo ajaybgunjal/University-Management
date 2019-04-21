@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'University.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': '10.7.1.15:1521/pdborcl',
-        'USER': '2016BTECS00066',
-        'PASSWORD': '2016BTECS00066',
-    }
+#     'default': {
+#         'ENGINE': 'django.db.backends.oracle',
+#         'NAME': '10.7.1.15:1521/pdborcl',
+#         'USER': '2016BTECS00066',
+#         'PASSWORD': '2016BTECS00066',
+#     }
     # 'default': {
     #     'ENGINE': 'django.db.backends.oracle',
     #     'NAME': 'localhost:1521/xe',
@@ -91,10 +91,10 @@ DATABASES = {
     # }
 
 
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 # 'default': {
 #     'ENGINE':   'django.db.backends.oracle',
 #     'NAME': '10.7.0.180:1521/PDBORCL',
